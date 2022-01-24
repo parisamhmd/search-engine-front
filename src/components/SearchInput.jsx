@@ -15,11 +15,10 @@ const useStyles = makeStyles({
         padding: '0 30px',
         width: '100%',
     },
-    iconBox: {
+    iconBox:({value})=> ({
         zIndex:1000,
         borderRadius: '0px 50px 50px 0px',
-        background: '#e8464e',
-        // #FE1631
+        background: !!value ? '#e8464e':'#999999',
         position: 'absolute',
         top: 0,
         fontSize:'18px',
@@ -30,8 +29,8 @@ const useStyles = makeStyles({
         alignItems: 'center',
         justifyContent: 'center',
         color:"#fff",
-        cursor: 'pointer', 
-    },
+        cursor: !!value ?'pointer':'default', 
+    }),
     inputBox: {
         minWidth:'100%',
         display: 'inline-block',
@@ -43,10 +42,11 @@ const useStyles = makeStyles({
     }, 
     container:{
         width:'100%',
+        marginTop:'4rem'
     }
   }); 
     
-const SearchInput= ({searchValue, onSearch:handleSearch}) => {
+const SearchInput= ({searchValue}) => {
     const [value, setValue] =React.useState(searchValue)
 
      const navigate = useNavigate();
@@ -56,11 +56,11 @@ const SearchInput= ({searchValue, onSearch:handleSearch}) => {
         search: `?${value}`,
       });}
  
-    const classes = useStyles();  
+    const classes = useStyles({value});  
     return (
         <div className={classes.container}>
             <div className={classes.inputBox}>
-                <span className={classes.iconBox} onClick={()=>goToPosts()}>
+                <span className={classes.iconBox} onClick={()=>!!value && goToPosts()}>
                     <SearchIcon fontSize='medium' style={{marginRight:'0.5rem'}} />
                     <p>Search</p>
                 </span>

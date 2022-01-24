@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     },
     root:{
        borderLeft:'4px solid #e8464e',
+       borderRight:'4px solid #e8464e',
        padding:'0.25rem 1.5rem',
        textAlign:'left', 
     },
@@ -23,8 +24,8 @@ const useStyles = makeStyles({
     },
     title:{
         color:'#4b7196',
-        margin:'0.5rem 0rem', 
-        fontSize:'1.625rem', 
+        margin:'0.3rem 0rem', 
+        fontSize:'1.5rem', 
         textDecoration:'none',
         cursor:'pointer',
         '&:hover':{
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
     }, 
     description:{
         color:'#4d5156',
-        margin:'0.25rem 0rem', 
+        margin:'0.2rem 0rem', 
         fontSize:'0.875rem'
     }
   }); 
