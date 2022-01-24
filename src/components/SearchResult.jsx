@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     container:{
         width: '100%',
         backgroundColor:'#E4EFF0', 
-        borderRadius:'1rem', 
+        borderRadius:'0.5rem', 
         padding:'1rem 0rem', 
         margin:'2rem 0rem'
     },

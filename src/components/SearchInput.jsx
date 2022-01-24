@@ -47,8 +47,7 @@ const useStyles = makeStyles({
   }); 
     
 const SearchInput= ({searchValue, onSearch:handleSearch}) => {
-    const [value, setValue] =React.useState(null)
-    React.useEffect(()=>{setValue(searchValue)}, [searchValue])
+    const [value, setValue] =React.useState(searchValue)
 
      const navigate = useNavigate();
      const goToPosts = () =>{
@@ -68,7 +67,7 @@ const SearchInput= ({searchValue, onSearch:handleSearch}) => {
                 <InputBase
                     placeholder='Search ...' 
                     className={classes.root}
-                    endAdornment={value && <ClearIcon cursor='pointer' className={classes.clearIcon} onClick={()=>{setValue(undefined)}} />}
+                    endAdornment={value && <ClearIcon cursor='pointer' className={classes.clearIcon} onClick={()=>{setValue('')}} />}
                     value={value}
                     onChange={(e)=>{setValue(e.currentTarget.value)}}
                 />
