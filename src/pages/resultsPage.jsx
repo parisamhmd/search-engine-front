@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import SearchInput from '../components/SearchInput';
 import SearchResult from '../components/SearchResult';
+
 const useStyles = makeStyles({
     root:{
         height:'100vh',
