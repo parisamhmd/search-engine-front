@@ -10,15 +10,15 @@ import SearchInput from '../components/SearchInput';
 import SearchResult from '../components/SearchResult';
 
 const useStyles = makeStyles({
-    root:{
-        height:'100vh',
+    root:({full})=>({
+        height:full ? '100%':'100vh',
         background:'#2B3956', 
         display:'flex', 
         flexDirection:'column',
         justifyContent: 'flex-start', 
         alignItems: 'flex-start', 
         padding:'0rem 8rem'
-    }, 
+    }), 
     resultContainer: {
         width: '100%',
     },
@@ -36,15 +36,16 @@ const useStyles = makeStyles({
 }); 
 
 const MainPage = () => {
-    const classes= useStyles()
     const {search} = useLocation();
-
+    
     function getSearchData() {
         return  axios.get(`http://0e89-5-219-206-237.ngrok.io/?query=${search.slice(1 , search.length)}`);    
     }
-
+    
     const {data, status} = useQuery(`result${search}`, getSearchData, {retry:3})
     const results = data?.data?.data || []
+    const full = !!(results.length>0)  
+    const classes= useStyles({full})
 
     return (
         <div className={classes.root}>

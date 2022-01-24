@@ -28,6 +28,12 @@ const useStyles = makeStyles({
         margin:'0.3rem 0rem', 
         fontSize:'1.5rem', 
         textDecoration:'none',
+    }, 
+    title1:{
+        color:'#4b7196',
+        margin:'0.3rem 0rem', 
+        fontSize:'1.5rem', 
+        textDecoration:'none',
         cursor:'pointer',
         '&:hover':{
             textDecoration:'underline',
@@ -48,7 +54,7 @@ const SearchResult= (props) => {
             <div className={classes.root}>
                 <a href={link} target="_blank" className={classes.link}>{link}</a>
                 <h3 className={classes.title}>
-                    <a href={link} target="_blank" className={classes.title}> {title} </a>
+                    <a href={link} target="_blank" className={classes.title1}> {title} </a>
                 </h3>
                 <p className={classes.description}>{snippet} </p>
             </div>
