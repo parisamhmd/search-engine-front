@@ -39,7 +39,7 @@ const MainPage = () => {
     const {search} = useLocation();
     
     function getSearchData() {
-        return  axios.get(`http://0e89-5-219-206-237.ngrok.io/?query=${search.slice(1 , search.length)}`);    
+        return  axios.get(`http://f4ac-5-219-38-60.ngrok.io/?query=${search.slice(1 , search.length)}`);    
     }
     
     const {data, status} = useQuery(`result${search}`, getSearchData, {retry:3})
